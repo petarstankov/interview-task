@@ -1,0 +1,16 @@
+version: '2.2'
+
+services:
+
+  crypto-recommendation:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: crypto-recommendation
+    mem_limit: 256m
+    ports:
+      - "8080:8080"
+    environment:
+      RATE_LIMIT: 60
+      RATE_LIMIT_DURATION: 1
+
